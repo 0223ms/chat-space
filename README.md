@@ -2,8 +2,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -23,22 +23,23 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|
+|name|text|index: true|
 |mail|string|
 |password|string|
 
 ### Association
 - has_many :groups_users
 - has_many :groups, through: :groups_users
-
+- has_many :messages
 ## messageテーブル
 
 |Column|Type|Options|
 |------|----|-------|
+|image|string|
 |content|string|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :users
-- has_many :groups
+- belongs_to :user
+- belongs_to :group
