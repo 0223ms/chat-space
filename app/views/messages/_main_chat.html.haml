@@ -1,0 +1,34 @@
+.chat-contents
+  .chat-main--group-info
+    .left
+      %p test
+      .left-bottom
+        %p Member:masa
+    .right
+      =link_to "Edit" 
+  .chat-main--message-list
+    .main1
+      .chat-name
+        .chat-name1
+          %p masa
+        .chat-name2
+          %p 2019/11/20(Wed) 17:43:01
+      .chat-massage
+        %p おはよう
+    .main2
+      .chat-names
+        .chat-names1
+          %p masa
+        .chat-names2
+          %p 2019/11/20(Wed) 17:43:34
+      .chat-massages
+        %p 今日は夜から雨
+  .chat-main--message-form
+    %form.new_message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholeder: "type a message"}
+        %label{class: "input-box___image"}
+        = icon('fas', 'image')
+        %input{type: "file", class: "input-box__image__file"}
+
+      %input{type: "submit", class: "submit-btn", value: "SEND"}
