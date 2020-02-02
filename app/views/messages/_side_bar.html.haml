@@ -4,16 +4,20 @@
       .top-items--name
         %p  masa
       %ul.top-items--icons
-        %li.item-edit
-          =link_to "#" do
+    
+        %li.item-edit       
+          = link_to new_group_path do
             = icon('fas', 'edit')
   
         %li.item-system
-          =link_to "#" do
+          =link_to edit_user_path(current_user.id) do
             = icon('fas', 'cog')
       
   .side-ber--group-list
-    .name
-      %p techcamp
-    .massage
-      %p まだメッセージがありません。
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
