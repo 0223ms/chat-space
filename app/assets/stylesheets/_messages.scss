@@ -150,4 +150,11 @@
     display: none;
   }
 
+  .messages {
+    overflow: scroll;
+    padding: 46px 40px;
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+  }
+
  
