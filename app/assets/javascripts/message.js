@@ -54,18 +54,11 @@ $(function(){
     };
     return html;
   };
- }
-
-   //$(function(){});の閉じタグの直上(処理の最後)に以下のように追記
-  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-    setInterval(reloadMessages, 7000);
-  }
 
   $('#new_message').on('submit', function(e){
   e.preventDefault();
   var formData = new FormData(this);
   var url = $(this).attr('action')
-
 
   $.ajax({
     url: url,
@@ -115,5 +108,9 @@ $(function(){
       alert('error');
     });
   };
+  //$(function(){});の閉じタグの直上(処理の最後)に以下のように追記
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 3000);
+  }
 });
 
