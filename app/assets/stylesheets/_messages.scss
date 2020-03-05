@@ -22,7 +22,7 @@
         
       }
 
-        .top-items--name p {
+        .top-items--name {
           font-size: 16px;
           font-weight: bold;
           color: #ffffff;
@@ -36,10 +36,13 @@
 
         
         }
-    .side-ber--group-list {
+    .side-ber--group-list { 
       height: calc(100vh - 100px);
       background-color: #2f3e51;
       padding: 20px 20px 0;
+      a{
+        text-decoration: none;
+      }
 
         .group__name {
           font-size: 15px;
